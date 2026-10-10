@@ -1,0 +1,26 @@
+services:
+  tts-server:
+    build: .
+    ports:
+      # 다른 기기에서 접속하려면 "10000:10000"으로 바꾸고 README 8번의 보안 조치를 적용할 것.
+      - "127.0.0.1:10000:10000"
+    environment:
+      - PYTHONUNBUFFERED=1   # print() 출력이 `docker compose up` 로그에 즉시 보이게 함
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+      - ./models:/app/models # 재빌드해도 다운로드한 모델이 유지되도록 함
+      - ./server.py:/app/server.py
+      - ./download_model.py:/app/download_model.py
+      # Hugging Face 캐시 보존. 이게 없으면 캐시가 컨테이너 내부에 있어서
+      # 재생성할 때마다 날아가고, 중단된 다운로드가 처음부터 다시 시작됨.
+      - hf-cache:/root/.cache/huggingface
+    command: bash -c "python download_model.py && uvicorn server:app --host 0.0.0.0 --port 10000"
+
+volumes:
+  hf-cache:

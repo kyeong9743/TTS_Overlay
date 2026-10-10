@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+
+    <!-- 탐색기 / Alt-Tab / 작업표시줄에서 .exe에 표시되는 아이콘 -->
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+
+    <AssemblyTitle>TTS Overlay</AssemblyTitle>
+    <Product>TTS Overlay</Product>
+    <Description>제로샷 음성 복제 실시간 TTS 오버레이</Description>
+    <Company>Hallabong</Company>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- XAML에서 pack://application:,,,/logo.png 로 참조할 수 있도록 리소스로 포함 -->
+    <Resource Include="logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 저장소 루트의 voice 폴더(기본 목소리 파일 voice\voice.opus)를 실행 폴더로 복사.
+         폴더가 없으면 아무것도 복사하지 않음. -->
+    <None Include="..\voice\**" Link="voice\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

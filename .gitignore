@@ -1,0 +1,59 @@
+# ─────────────────────────────────────────────
+#  Models / large binaries  (auto-downloaded at runtime — never commit)
+# ─────────────────────────────────────────────
+*.pth
+*.pt
+*.t7
+*.ckpt
+*.onnx
+*.bin
+TTS_Server/models/
+# reference / test audio — never committed.
+# The reference voice is supplied by each user at runtime (see README section 5).
+*.wav
+*.flac
+*.ogg
+*.opus
+*.mp3
+*.m4a
+
+# ─────────────────────────────────────────────
+#  Python
+# ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+nltk_data/
+
+# ─────────────────────────────────────────────
+#  .NET / Visual Studio (C# client)
+# ─────────────────────────────────────────────
+bin/
+obj/
+.vs/
+*.suo
+*.user
+*.vsidx
+*.dtbcache.v2
+*.futdcache.v2
+# user-specific runtime settings (device names, local paths)
+settings.json
+
+# ─────────────────────────────────────────────
+#  OS / editor cruft
+# ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+
+# ─────────────────────────────────────────────
+#  Local tool settings
+# ─────────────────────────────────────────────
+.claude/
+velog/
+# 첫날 코드 기준의 분석 보고서. 지금 코드와 맞지 않아 올리지 않음
+docs/PROJECT_ANALYSIS.md
