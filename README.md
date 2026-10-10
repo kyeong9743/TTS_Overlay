@@ -31,7 +31,7 @@
 
 참조 음성 3\~15초를 넣으면 그 목소리의 톤과 분위기를 따라간다. 하지만, **같은 사람으로 들리는 수준은 아니다.** 비슷한 톤의 다른 사람에 가깝고, 쉰 듯한 기계음이 섞인다.
 
-이 문제를 해결해 보려고 GPT-SoVITS와 OpenVoice v2를 연결해서 합성 360개를 측정했지만, 10초짜리 참조 음성으로는 어느 방식도 뚜렷하게 낫지 않아서 다시 되돌렸다. 과정은 [블로그 2편](https://velog.io/@kyeong9743/TTS-Overlay-2)에, 측정 결과는 [docs/MODEL_ANALYSIS.md](docs/MODEL_ANALYSIS.md)에 있다.
+이 문제를 해결해 보려고 GPT-SoVITS와 OpenVoice v2를 연결해서 합성 360개를 측정했지만, 10초짜리 참조 음성으로는 어느 방식도 뚜렷하게 낫지 않아서 다시 되돌렸다. 과정은 [Velog 2편](https://velog.io/@kyeong9743/TTS-Overlay-2)에, 측정 결과는 [docs/MODEL_ANALYSIS.md](docs/MODEL_ANALYSIS.md)에 있다.
 
 ![게임 화면 위에 표시된 입력창](docs/image/overlay_ingame.jpg)
 
@@ -77,7 +77,7 @@
 - **재생 중단 단축키**: 나오고 있는 소리를 즉시 끊는다 (기본 `Ctrl+Alt+X`)
 - **미리듣기**: 설정 창에서 현재 값으로 합성해서 듣기 장치로만 재생한다. 출력 장치로는 나가지 않는다
 
-마우스 버튼은 단축키로 지원하지 않는다. 이유는 [블로그 1편](https://velog.io/@kyeong9743/TTS-Overlay-1)에 적었다.
+마우스 버튼은 단축키로 지원하지 않는다. 이유는 [Velog 1편](https://velog.io/@kyeong9743/TTS-Overlay-1)에 적었다.
 
 ### TTS Server가 하는 일
 
@@ -456,8 +456,8 @@ TTS_Overlay/
 | [docs/history.md](docs/history.md) | 개발 중 겪은 문제와 해결 과정 |
 | [docs/API_FUNCTION_REFERENCE.md](docs/API_FUNCTION_REFERENCE.md) | API와 함수별 동작 |
 | [docs/MODEL_ANALYSIS.md](docs/MODEL_ANALYSIS.md) | 모델이 닮지 않는 이유, 다른 모델 측정 결과 |
-| [블로그 1편](https://velog.io/@kyeong9743/TTS-Overlay-1) | 제작 과정과 문제 13개 |
-| [블로그 2편](https://velog.io/@kyeong9743/TTS-Overlay-2) | 목소리가 닮지 않는 이유, 모델 2개를 연결해서 측정하고 되돌린 과정 |
+| [Velog 1편](https://velog.io/@kyeong9743/TTS-Overlay-1) | 제작 과정과 문제 13개 |
+| [Velog 2편](https://velog.io/@kyeong9743/TTS-Overlay-2) | 목소리가 닮지 않는 이유, 모델 2개를 연결해서 측정하고 되돌린 과정 |
 
 ---
 
@@ -488,9 +488,8 @@ TTS_Overlay/
 
 이 프로젝트는 개인적인 사용을 전제로 제공되며, 제작자는 오용에 대해 책임지지 않는다.
 
-### 만든 사람과 참고한 것
+### 참고한 것
 
-- 제작: 한라봉 (Hallabong)
 - TTS 모델: [StyleTTS2](https://github.com/yl4579/StyleTTS2) by yl4579
 - Vocos Fork와 한국어 체크포인트: [5Hyeons](https://github.com/5Hyeons/StyleTTS2-Vocos)
 - 오디오 재생: [NAudio](https://github.com/naudio/NAudio)
